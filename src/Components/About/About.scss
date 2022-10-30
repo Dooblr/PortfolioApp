@@ -1,0 +1,53 @@
+@import '../../Colors.scss';
+
+#about-container{
+    @media screen and (min-width:768px) {
+        // max-width:80vw;
+    }
+    // align-content: center;
+    // background-color: red;
+}
+
+.about-pic{
+    object-fit:fill;
+    @media only screen and (max-width:768px){
+        width:33vw;
+        margin:auto;
+        margin-bottom:5rem;
+    }
+    @media only screen and (min-width:768px){
+        width:33vw;
+        max-width:20rem;
+    }
+    object-fit: contain;
+    align-self: flex-start;
+    border-radius: 25px;
+    outline: 5px solid $font-color;
+    outline-offset: 15px;
+
+    transform: translateY(1rem);
+}
+
+// .picAnimation{
+//     animation: fadeInOutHold 3s infinite;
+// }
+
+#about-text{
+    font-size: medium;
+    text-align: left;
+    font-family:'Open Sans';
+    max-width:25rem;
+    @media screen and (min-width:768px) {
+        transform:translateX(2rem)
+    }
+    @media screen and (min-width:1200px) {
+        transform:translateX(-20px)
+    }
+}
+
+// @keyframes fadeInOutHold {
+//     0% { opacity: 0; }
+//     20% { opacity: 1; }
+//     80% { opacity: 1; }
+//     100% { opacity: 0; }
+//   }

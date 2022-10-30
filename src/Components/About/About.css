@@ -1,0 +1,41 @@
+.about-pic {
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-self: flex-start;
+  border-radius: 25px;
+  outline: 5px solid rgb(198, 193, 181);
+  outline-offset: 15px;
+  transform: translateY(1rem);
+}
+@media only screen and (max-width: 768px) {
+  .about-pic {
+    width: 33vw;
+    margin: auto;
+    margin-bottom: 5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-pic {
+    width: 33vw;
+    max-width: 20rem;
+  }
+}
+
+#about-text {
+  font-size: medium;
+  text-align: left;
+  font-family: "Open Sans";
+  max-width: 25rem;
+}
+@media screen and (min-width: 768px) {
+  #about-text {
+    transform: translateX(2rem);
+  }
+}
+@media screen and (min-width: 1200px) {
+  #about-text {
+    transform: translateX(-20px);
+  }
+}/*# sourceMappingURL=About.css.map */

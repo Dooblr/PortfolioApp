@@ -1,0 +1,32 @@
+#contact-container{
+    @media sceen and (min-width:768px){
+        max-width:80vw;
+    }
+    @media sceen and (min-width:1200px){
+        max-width:67vw;
+    }
+    *:not(h1,h2,h3,code,p) {
+        font-family:'Open Sans';
+    }
+    align-items: flex-start;
+}
+
+#contact-info{
+    // align-self: flex-start;
+    align-items: flex-start;
+    top: 0;
+    // widtH:50%;
+    // background:red;
+    margin-top:2rem;
+}
+
+.submit-button{
+    // font-family: 'Comfortaa' !important;
+}
+
+// .sm-hide{
+//     @media screen and (max-width:768px){
+//         display:none;
+//     }
+//     background-color: red;
+// }

@@ -1,0 +1,40 @@
+#portfolio-container {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  #portfolio-container {
+    max-width: 80vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #portfolio-container {
+    max-width: 67vw;
+  }
+}
+#portfolio-container .card {
+  background: red;
+  padding: 10em;
+}
+#portfolio-container h1 {
+  width: 100%;
+}
+
+.link-container {
+  width: 100%;
+  text-align: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.button-row {
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-button {
+  margin: 0.25rem;
+}/*# sourceMappingURL=Portfolio.css.map */

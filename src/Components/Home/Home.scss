@@ -1,0 +1,64 @@
+@import '../../Colors.scss';
+
+// Colors:
+// $font-color - main cream font color
+
+#body{
+    @media (min-width: 768px) {
+        margin-top:2em;
+    }
+}
+
+.hide-on-small{
+    @media (max-width: 768px) {
+        display:none;
+    };
+}
+
+.short-br{
+    height:0.5em;
+}
+
+.w-100 {
+    width:100%;
+}
+
+.headline{
+    text-align: left;
+    font-size:2em;
+}
+
+#left-box{
+    @media(min-width:1200px) {
+        transform:translateX(4em);
+    };
+}
+
+#profile-pic{
+    display: block;
+    margin: auto;
+    outline: 5px solid $font-color;
+    outline-offset: 15px;
+    width:67%;
+    max-width:15em;
+}
+
+#profile-wrapper{
+    width:100%;
+    @media (min-width: 768px) {
+        max-width:40vw;
+        transform: translate(-2em,2em);
+    };
+}
+
+#subheadline{
+    margin-inline: 1em;
+    max-width:768px;
+}
+
+.flex-row{
+    display:flex;
+    Button{
+        width:90% !important;
+    }
+}
