@@ -37,10 +37,15 @@
 #profile-pic{
     display: block;
     margin: auto;
-    outline: 5px solid $font-color;
-    outline-offset: 15px;
+    // border-radius:9999px;
+    // outline: 5px solid $font-color;
+    // outline-offset: 15px;
     width:67%;
     max-width:15em;
+
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
 }
 
 #profile-wrapper{

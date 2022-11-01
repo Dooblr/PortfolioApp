@@ -80,7 +80,7 @@ export default function Contact() {
                     <h2>Dan Feinstein</h2>
                     <HStack><AiFillPhone/><p>(858) 774-1024</p></HStack>
                     <HStack><AiFillMail/><p>DanielRonFeinstein@Gmail.com</p></HStack>
-                    <HStack><AiFillLinkedin/><p>LinkedIn.com/n/DanFeinstein</p></HStack>
+                    <HStack><AiFillLinkedin/><p>LinkedIn.com/in/DanFeinstein</p></HStack>
                     <HStack><AiFillGithub/><p>Github.com/dooblr</p></HStack>
                 </VStack>
                 

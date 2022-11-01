@@ -1,18 +1,19 @@
+import { useEffect } from "react"
+import { Route, Routes } from 'react-router-dom'
 import {
   Box, ChakraProvider, Grid,
   theme, VStack
 } from "@chakra-ui/react"
-import { useEffect } from "react"
-import { Route, Routes } from 'react-router-dom'
 import WebFont from 'webfontloader'
-import './App.css'
-import { Home } from "./Components/Home/Home"
-import Navbar from './Components/Navbar/Navbar'
-
-import Portfolio from "./Components/Portfolio/Portfolio"
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
+
+import './App.css'
+
+import { Home } from "./Components/Home/Home"
+import Navbar from './Components/Navbar/Navbar'
+import Portfolio from "./Components/Portfolio/Portfolio"
 import Resume from "./Components/Resume/Resume"
 import About from "./Components/About/About"
 import Contact from "./Components/Contact/Contact"
@@ -50,8 +51,6 @@ export function App() {
           <VStack spacing={8}>
 
             <Navbar/>
-
-            {/* <BackButton/> */}
 
             <Routes>
               <Route path='/' element={ <Home/> }></Route>

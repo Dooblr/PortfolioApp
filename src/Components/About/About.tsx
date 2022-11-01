@@ -103,7 +103,7 @@ export default function About() {
                         </p>
                         <div/>
                         <div className="short-br"/>
-                        <div className="flex-row">
+                        <div className="flex-row hidden-sm">
                             <Link to="/contact" className="w-100">
                                 <Button colorScheme='teal' size='lg' w="67%">contact</Button>
                             </Link>

@@ -5,8 +5,7 @@
      object-fit: contain;
   align-self: flex-start;
   border-radius: 25px;
-  outline: 5px solid rgb(198, 193, 181);
-  outline-offset: 15px;
+  box-shadow: 0 0 0 0.5rem var(--chakra-colors-chakra-body-bg), 0 0 0 1rem rgb(198, 193, 181);
   transform: translateY(1rem);
 }
 @media only screen and (max-width: 768px) {

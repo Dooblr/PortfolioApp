@@ -1,10 +1,24 @@
 import { Button, Image, Stack, VStack } from "@chakra-ui/react"
+import { getDownloadURL, getStorage, ref } from "firebase/storage"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import useAsyncEffect from "use-async-effect"
 import '../../App.css'
-import profilePic from '../../assets/profile_pic.jpg'
 import "./Home.css"
 
 export function Home() {
+
+    const [profilePic, setProfilePic] = useState('')
+    // Firebase storage
+    const storage = getStorage();
+    useAsyncEffect(async()=>{
+        // getDownloadURL(ref(storage, 'profile_pic.jpg'))
+        // .then((url) => {
+        //     setProfilePic(url)
+        // })
+        const url = await getDownloadURL(ref(storage, 'profile_pic.jpg'))
+        setProfilePic(url)
+    },[])
 
     return(
         <div id="body">
@@ -27,7 +41,7 @@ export function Home() {
                     </VStack>
                 
                     <div id="profile-wrapper">
-                        <Image id="profile-pic" src={profilePic} borderRadius='full'/>
+                        <Image id="profile-pic" src={profilePic}/>
                     </div>
             </Stack>
         </div>

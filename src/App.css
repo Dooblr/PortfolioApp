@@ -21,4 +21,10 @@ h3 {
 
 .h-spacer {
   width: 0.25rem;
+}
+
+@media sceen and (max-width: 768px) {
+  .hidden-sm {
+    display: none;
+  }
 }/*# sourceMappingURL=App.css.map */

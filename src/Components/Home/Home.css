@@ -32,10 +32,11 @@
 #profile-pic {
   display: block;
   margin: auto;
-  outline: 5px solid rgb(198, 193, 181);
-  outline-offset: 15px;
   width: 67%;
   max-width: 15em;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5rem var(--chakra-colors-chakra-body-bg), 0 0 0 1rem rgb(198, 193, 181);
 }
 
 #profile-wrapper {

@@ -21,8 +21,10 @@ h3 {
     width:0.25rem;
 }
 
-.h-spacer-wide{
-    // width:0.5rem;
+.hidden-sm{
+    @media sceen and (max-width:768px){
+        display: none;
+    }
 }
 
 
