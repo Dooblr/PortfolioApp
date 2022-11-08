@@ -1,22 +1,19 @@
-import { useEffect } from "react"
-import { Route, Routes } from 'react-router-dom'
 import {
-  Box, ChakraProvider, Grid,
-  theme, VStack
-} from "@chakra-ui/react"
-import WebFont from 'webfontloader'
+  Box, ChakraProvider, color, Grid, useColorMode, VStack, extendTheme, type ThemeConfig
+} from "@chakra-ui/react";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { useEffect } from "react";
+import { Route, Routes } from 'react-router-dom';
+import WebFont from 'webfontloader';
 
+import './App.css';
 
-import './App.css'
-
-import { Home } from "./Components/Home/Home"
-import Navbar from './Components/Navbar/Navbar'
-import Portfolio from "./Components/Portfolio/Portfolio"
-import Resume from "./Components/Resume/Resume"
-import About from "./Components/About/About"
-import Contact from "./Components/Contact/Contact"
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
+import { Home } from "./Components/Home/Home";
+import Navbar from './Components/Navbar/Navbar';
+import Portfolio from "./Components/Portfolio/Portfolio";
+import Resume from "./Components/Resume/Resume";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDBMabNYH2DyzUUawlGM2XM21AqM5FTCyM",
@@ -26,22 +23,26 @@ const firebaseConfig = {
   messagingSenderId: "628329913970",
   appId: "1:628329913970:web:2e873f63c9e70dfc436ceb",
   measurementId: "G-0W3KQLKYKN"
-};
+}
 
+// Set chakra dfault theme to dark and use system color
+const config: ThemeConfig = {
+  initialColorMode: 'dark',
+  useSystemColorMode: true,
+}
+const theme = extendTheme({config})
 
 export function App() {
 
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
   useEffect(()=>{
     // Load Google Webfonts
     WebFont.load({
       google: {
-        families:['Comfortaa', 'Open Sans'] // ,'Bungee','Quicksand'
-      },
+        families:['Comfortaa'] // 'Open Sans','Bungee','Quicksand'
+      }
     });
-
   },[])
 
   return (

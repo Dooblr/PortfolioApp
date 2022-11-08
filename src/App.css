@@ -1,10 +1,15 @@
+@font-face {
+  font-family: "SFProDisplay";
+  src: url("./Fonts/SFProDisplay-Regular.woff2") format("woff2");
+}
 * {
-  font-family: "Open Sans";
+  font-family: "SFProDisplay";
 }
 
 h1 {
-  font-weight: bolder !important;
+  font-weight: bolder;
   font-size: 2em !important;
+  font-family: "Comfortaa";
 }
 
 h2 {

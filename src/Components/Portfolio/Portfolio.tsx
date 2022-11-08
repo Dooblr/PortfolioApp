@@ -6,7 +6,7 @@ import { BsFilm } from 'react-icons/bs'
 import { FaFish, FaReact, FaSwift } from 'react-icons/fa'
 import { IoLogoFirebase } from 'react-icons/io5'
 import { MdCheckCircle, MdNetworkCheck, MdQueueMusic, MdWeb } from 'react-icons/md'
-import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiHeroku, SiReact, SiSwift } from 'react-icons/si'
+import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiGoogle, SiReact, SiSwift } from 'react-icons/si'
 import ReactPlayer from 'react-player'
 import '../../App.css'
 import './Portfolio.css'
@@ -35,7 +35,7 @@ const portfolioData = [
 
                     <div className="button-row">
                         {/* <div><Button className="modal-button" onClick={()=>{setVideoMode(!videoMode)}}variant="outline" colorScheme="teal">{videoMode === true ? 'hide video' : 'watch a demo'}</Button></div> */}
-                        <a target='_blank' rel="noreferrer" href="https://disco-list.herokuapp.com/"><Button className="modal-button" variant="outline" colorScheme="teal">go to the app</Button></a>
+                        <a target='_blank' rel="noreferrer" href="https://disco-list.com/"><Button className="modal-button" variant="outline" colorScheme="teal">go to the app</Button></a>
                         <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/DiscoList">
                             <Button className="modal-button" variant="outline" colorScheme="teal">
                                 <HStack><AiFillGithub/><p>Github</p></HStack>
@@ -65,7 +65,7 @@ const portfolioData = [
                                     <ListIcon as={SiDocker} color='teal.500' />Docker
                                 </ListItem>
                                 <ListItem>
-                                    <ListIcon as={SiHeroku} color='teal.500' />Heroku
+                                    <ListIcon as={SiGoogle} color='teal.500' />Google Cloud Run
                                 </ListItem>
                             </List>
                             
@@ -127,7 +127,7 @@ const portfolioData = [
                                 <ListIcon as={SiChakraui} color='teal.500' />Chakra UI
                             </ListItem>
                             <ListItem>
-                                <ListIcon as={SiHeroku} color='teal.500' />Heroku
+                                <ListIcon as={SiGoogle} color='teal.500' />Firebase
                             </ListItem>
                         </List>
 

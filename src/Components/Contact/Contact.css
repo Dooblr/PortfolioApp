@@ -11,10 +11,6 @@
     max-width: 67vw;
   }
 }
-#contact-container *:not(h1, h2, h3, code, p) {
-  font-family: "Open Sans";
-}
-
 #contact-info {
   align-items: flex-start;
   top: 0;

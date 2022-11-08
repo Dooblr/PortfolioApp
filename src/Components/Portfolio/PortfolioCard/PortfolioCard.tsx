@@ -46,7 +46,7 @@ export default function PortfolioCard(props:any){
                             size='lg' w="100%" 
                             onClick={handleOpenModalClick}>learn more</Button>
                 </VStack>
-                <PortfolioModal className="myModal" ref={openModal} ModalBody={{body:<props.modalBody.body/>,title:props.title}}/>
+                <PortfolioModal ref={openModal} ModalBody={{body:<props.modalBody.body/>,title:props.title}}/>
             </Box>
         </>
     )

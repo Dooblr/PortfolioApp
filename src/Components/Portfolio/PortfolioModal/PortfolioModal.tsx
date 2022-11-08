@@ -1,5 +1,6 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spacer, useDisclosure } from "@chakra-ui/react"
 import { forwardRef, useImperativeHandle } from "react"
+import './PortfolioModal.css'
 
 
 const PortfolioModal = forwardRef((props:any,ref:any)=> {
@@ -15,9 +16,9 @@ const PortfolioModal = forwardRef((props:any,ref:any)=> {
 
     return (
       <>
-        <Modal size="md" isOpen={isOpen} onClose={onClose} isCentered>
+        <Modal size="md" isOpen={isOpen} onClose={onClose} isCentered scrollBehavior={'inside'}>
           <ModalOverlay />
-          <ModalContent >
+          <ModalContent id="portfolio-modal">
             <ModalHeader>{props.ModalBody.title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody className="modal-body">

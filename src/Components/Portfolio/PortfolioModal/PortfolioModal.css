@@ -1,12 +1,10 @@
-.code-link {
-  color: lightblue;
-  text-shadow: 0.5rem 0.5rem 15px #000;
-  font-weight: bolder;
-  font-size: 1rem;
+.chakra-modal__content {
+  max-width: 600px;
+  max-height: 50vh;
 }
-
-.code-link:hover {
-  text-shadow: 1rem 1rem 30px #000;
-  font-size: 1.25rem;
-  transition: ease-in-out 0.1s;
+@media screen and (max-width: 768px) {
+  .chakra-modal__content {
+    max-width: 80vw !important;
+    max-height: 80vh !important;
+  }
 }/*# sourceMappingURL=PortfolioModal.css.map */

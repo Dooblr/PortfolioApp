@@ -13,8 +13,10 @@ export default function About() {
     // Firebase storage
     const storage = getStorage();
 
-    // Holds currently showing pic
+    // Currently showing pic
     const [pic, setPic] = useState('')
+    // Image loaded
+    const [imageLoaded, setImageLoaded] = useState(false)
 
     // Holds list of pic urls
     const [slideshowPics, setSlideshowPics] = useState<string[]>([])
@@ -74,12 +76,26 @@ export default function About() {
             {/* <br/> */}
             <Stack direction={{base:'column',md:'row'}} display='flex' justifyContent="center">
 
-                    {/* Loading spinner */}
-                    {!pic && <><Center><Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='teal.200' size='xl'/></Center><br/></>}
-
                     {/* Slideshow image */}
-                    {pic && <img alt="" id="about-pic" className='about-pic' src={pic}/>}
-                      
+                    <img alt="" 
+                          id="about-pic" 
+                          className='about-pic' 
+                          src={pic}
+                          onLoad={()=>{setImageLoaded(true)}}
+                          hidden={!imageLoaded}
+                          />
+                    {/* Loading spinner */}
+                    {!imageLoaded &&
+                        <Center>
+                            <Spinner
+                              thickness='4px'
+                              speed='1s'
+                              emptyColor='gray.200'
+                              color='blue.500'
+                              size='xl'
+                            />
+                        </Center>
+                    }
                     
                     <VStack id="left-box">
                         

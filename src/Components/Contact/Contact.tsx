@@ -5,33 +5,18 @@ import {
     Flex,
     FormControl, FormErrorMessage, FormLabel, HStack, Input, Stack, Textarea, VStack
 } from "@chakra-ui/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillPhone } from "react-icons/ai";
 import * as Yup from 'yup';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
-
-// (e, values) => {
-//     alert(JSON.stringify(values, null, 2));
-
-//       var templateParams = {
-//           firstName: 'James',
-//           lastName: 'James',
-//           email: 'James',
-//           message: 'James',
-//       };  
-          
-//       emailjs.send('drf-portfolio', 'drf-portfolio-template', templateParams)
-//           .then(function(response) {
-//           console.log('SUCCESS!', response.status, response.text);
-//           }, function(error) {
-//           console.log('FAILED...', error);
-//           });
-//       }
+import { useToast } from '@chakra-ui/react'
 
 export default function Contact() {
 
     const form = useRef();
+    const toast = useToast()
+    const [isSending, setIsSending] = useState(false)
 
     // Init email sending library on render
     useEffect(()=>{
@@ -40,10 +25,31 @@ export default function Contact() {
 
     // Form send email callback
     const sendEmail = (e) => {
+        setIsSending(true)
         emailjs.sendForm('drf-portfolio', 'drf-portfolio-template', form.current, 'ynIxeblRK_FN-x-OC')
             .then((result) => {
+                setIsSending(false)
+                toast({
+                    title: 'Message sent!',
+                    description: "I'll get back to you as soon as possible.",
+                    status: 'success',
+                    duration: 5000,
+                    isClosable: true,
+                    position:'top',
+                  })
                 console.log(result.text);
+                formik.resetForm()
             }, (error) => {
+                setIsSending(false)
+                toast({
+                    title: 'Error sending message',
+                    description: "Check your connection and try again.",
+                    status: 'error',
+                    duration: 5000,
+                    isClosable: true,
+                    position:'top',
+                  }) 
+                formik.resetForm()
                 console.log(error.text);
             });
     };
@@ -146,7 +152,9 @@ export default function Contact() {
                                 />
                             </FormControl>
                             
-                            <Button type="submit" colorScheme="teal" width="full">
+                            <Button isLoading={isSending} 
+                                    loadingText='Submitting...'
+                                    type="submit" colorScheme="teal" variant='outline' width='100%'>
                                 Submit
                             </Button>
                         </VStack>
