@@ -23,12 +23,6 @@
   font-size: 2em;
 }
 
-@media (min-width: 1200px) {
-  #left-box {
-    transform: translateX(4em);
-  }
-}
-
 #profile-pic {
   display: block;
   margin: auto;

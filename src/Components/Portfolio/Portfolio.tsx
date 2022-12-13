@@ -3,10 +3,10 @@ import { useState } from 'react'
 import { AiFillApple, AiFillGithub, AiOutlineWifi } from 'react-icons/ai'
 import { BiNetworkChart } from 'react-icons/bi'
 import { BsFilm } from 'react-icons/bs'
-import { FaFish, FaReact, FaSwift } from 'react-icons/fa'
+import { FaFish, FaPaw, FaReact, FaSwift } from 'react-icons/fa'
 import { IoLogoFirebase } from 'react-icons/io5'
-import { MdCheckCircle, MdNetworkCheck, MdQueueMusic, MdWeb } from 'react-icons/md'
-import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiGoogle, SiReact, SiSwift } from 'react-icons/si'
+import { MdCheckCircle, MdList, MdNetworkCheck, MdQueueMusic, MdWeb } from 'react-icons/md'
+import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiFirebase, SiGoogle, SiReact, SiSwift } from 'react-icons/si'
 import ReactPlayer from 'react-player'
 import '../../App.css'
 import './Portfolio.css'
@@ -15,7 +15,79 @@ import PortfolioCard from './PortfolioCard/PortfolioCard'
 // Current projects
 const portfolioData = [
     {
-        id:1,
+        id:2,
+        title:"Ursabase",
+        description:"Form manager for a local Mower & Saw business",
+        video_url:"https://www.youtube.com/watch?v=veqBriiuZM0",
+        avatar:<FaPaw size="3em"/>,
+        modalBody:
+            function ModalBody(){
+                const [videoMode, setVideoMode] = useState(false)
+                return (
+                    <>
+                    <Text>
+                        Ursabase is a custom-made form management tool for Zoll's, a landscaping supply and repair shop in Medford, OR.<br/><br/>
+                        It was created to replace the paper-based system and has improved efficiency and productivity.<br/><br/>
+                        Technicians receive new equipment for repair and creat a 'Triage Sheet'. This sheet is filled in with
+                        information about the equipment to be repaired. It is then read by the parts manager who gathers and orders the necessary parts.
+                        
+                    </Text>
+                    <br/>
+                    <Center>
+
+                    <div className="button-row">
+                        {/* <div><Button className="modal-button" onClick={()=>{setVideoMode(!videoMode)}}variant="outline" colorScheme="teal">{videoMode === true ? 'hide video' : 'watch a demo'}</Button></div> */}
+                        <a target='_blank' rel="noreferrer" href="https://ursabase.web.app/"><Button className="modal-button" variant="outline" colorScheme="teal">go to the app</Button></a>
+                        {/* <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/DiscoList">
+                            <Button className="modal-button" variant="outline" colorScheme="teal">
+                                <HStack><AiFillGithub/><p>Github</p></HStack>
+                            </Button>
+                        </a> */}
+                    </div>    
+                    </Center>
+                    <br/>
+                    {videoMode && <>
+                        <ReactPlayer width="100%" url='https://www.youtube.com/watch?v=veqBriiuZM0' />
+                    </>}
+                    {!videoMode && <>
+                        <h2>Technologies used:</h2>
+                        <div className="short-br"/>
+                        <div className="flex-row space-evenly">
+                            <List spacing={3}>
+                                <ListItem>
+                                    <ListIcon fontSize="1rem" as={SiReact} color='teal.500' className="icon"/>React
+                                </ListItem>
+                                
+                                <ListItem>
+                                    <ListIcon as={SiChakraui} color='teal.500' />ChakraUI
+                                </ListItem>
+                                
+                                <ListItem>
+                                    <ListIcon as={SiFirebase} color='teal.500' />Firebase
+                                </ListItem>
+
+                            </List>
+                            
+                            <List spacing={3}>
+                                <ListItem>
+                                    <ListIcon as={MdList} color='teal.500' />Formik
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={MdCheckCircle} color='teal.500' />React Hot Toast
+                                </ListItem>
+                                <ListItem>
+                                    <ListIcon as={MdCheckCircle} color='teal.500' />Async/Await
+                                </ListItem>
+                            </List>
+                        </div>
+                    </>}
+                    
+                    </>
+                )
+            }
+    },
+    {
+        id:2,
         title:"DiscoList",
         description:"Turn record labels into Spotify Playlists.",
         video_url:"https://youtu.be/grQ_ANiDf3Y",
@@ -45,7 +117,7 @@ const portfolioData = [
                     </Center>
                     <br/>
                     {videoMode && <>
-                        <ReactPlayer width="100%" url='https://youtu.be/grQ_ANiDf3Y' />
+                        <ReactPlayer width="100%" url="https://youtu.be/grQ_ANiDf3Y" />
                     </>}
                     {!videoMode && <>
                         <h2>Technologies used:</h2>
@@ -94,7 +166,7 @@ const portfolioData = [
             }
     },
     {
-        id:2,
+        id:3,
         title:"Portfolio Website",
         description:"This website is running React!",
         avatar:<MdWeb size="3em"/>,

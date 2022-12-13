@@ -26,11 +26,11 @@ export function Home() {
         <div id="body">
             
             <Stack direction={{base:'column',md:'row'}} display='flex' justifyContent="center">
-                    <VStack marginTop={{base:'-1em',md:'2em'}} id="left-box">
+                    <VStack marginTop={{base:'-1em',md:'2em'}} id="left-box" maxWidth={'20rem'}>
                         
                         <h1 className="headline">Hi, I'm Dan!</h1>
                         <h2 id="subheadline">
-                            I'm a self-taught React developer seeking an internship or junior position</h2>
+                            I'm a self-taught, freelance developer seeking a full-time Frontend or Full Stack position.</h2>
                         <div/>
                         <div className="short-br"/>
                         <div className="flex-row">

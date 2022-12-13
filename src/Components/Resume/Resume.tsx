@@ -8,7 +8,7 @@ export default function Resume(){
     const [resumeUrl, setResumeUrl] = useState("")
 
     useEffect(()=>{
-        getDownloadURL(ref(storage, 'feinstein_webdev_resume_221027.pdf'))
+        getDownloadURL(ref(storage, 'feinstein_webdev_resume_221213.pdf'))
           .then((url) => {
             console.log(url)
             setResumeUrl(url)
