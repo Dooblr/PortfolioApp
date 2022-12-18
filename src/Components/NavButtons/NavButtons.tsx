@@ -11,6 +11,10 @@ export default function NavButtons(){
             <Link to="/portfolio" className="w-100">
                 <Button colorScheme='teal' size='lg' w="100%">Portfolio</Button>
             </Link>
+
+            <Link to="/portfolio" className="w-100">
+                <Button colorScheme='teal' size='lg' w="100%">Skills</Button>
+            </Link>
             
             <Link to="/resume" className="w-100">
                 <Button colorScheme='teal' size='lg' w="100%">Resume</Button>

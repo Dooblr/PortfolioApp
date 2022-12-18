@@ -1,11 +1,11 @@
-@import '../../Colors.scss';
+@import '../../Theming/Colors.scss';
 
 // Colors:
 // $font-color - main cream font color
 
-#body{
+#home-body{
     @media (min-width: 768px) {
-        margin-top:2em;
+        margin-top:0rem;
     }
 }
 
@@ -15,7 +15,7 @@
     };
 }
 
-.short-br{
+.sbr{
     height:0.5em;
 }
 
@@ -23,47 +23,85 @@
     width:100%;
 }
 
-.headline{
-    text-align: left;
+#home-view-work-link{
+    align-self: center;
+}
+
+#home-headline{
+    text-align: start;
     font-size:2em;
+    width:100%;
+    margin-left: 1rem;
+    max-width: 15rem;
+    background-color: rgba(0,0,0,0.3);
+    padding:1rem;
+    padding-block: .25rem;
+    border-radius:.5rem;
+    clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 0);
+    @media screen and (max-width:768px){
+        margin-block: 1rem;
+    }
 }
 
-#left-box{
-    @media(min-width:1200px) {
-        // transform:translateX(4em);
-    };
+.home-subheadline{
+    // margin-inline: 1rem;
+    text-align: start;
+    padding-left:2rem;
+    text-indent:-1.5rem;
+    // background-color:red;
+    // max-width:30rem;
+    .home-subtext-bullet{
+        display:inline-block;
+        width:'2rem';
+        color:rgb(129,230,217);
+        transform:translate(-.25rem,.2rem)
+    }
 }
 
-#profile-pic{
-    display: block;
-    margin: auto;
-    // border-radius:9999px;
-    // outline: 5px solid $font-color;
-    // outline-offset: 15px;
-    width:67%;
-    max-width:15em;
+// #menu-label{
+//     margin-left: .5rem;
+// }
 
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
-}
 
 #profile-wrapper{
     width:100%;
     @media (min-width: 768px) {
         max-width:40vw;
-        transform: translate(-2em,2em);
+        margin-top:5rem;
     };
+
+    #profile-pic{
+        display: block;
+        margin: auto;
+        width:80%;
+        max-width:20rem;
+        margin-top:2rem;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
+    }
+
+    #profile-pic2{
+        position:absolute;
+        z-index: 2;
+        // display: block;
+        width:20%;
+        // margin-top:-8rem;
+        margin-left: 10rem;
+        max-width:4.5rem;
+        // max-width:20rem;
+    
+        // border: none;
+        border-radius: 50%;
+        // box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
+    }
 }
 
-#subheadline{
-    margin-inline: 1em;
-    max-width:768px;
-}
 
 .flex-row{
     display:flex;
+    width:100%;
     Button{
-        width:90% !important;
+        width:80% !important;
     }
 }

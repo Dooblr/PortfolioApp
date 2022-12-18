@@ -29,11 +29,6 @@
 }
 @media screen and (min-width: 768px) {
   #about-text {
-    transform: translateX(2rem);
-  }
-}
-@media screen and (min-width: 1200px) {
-  #about-text {
-    transform: translateX(-20px);
+    margin-left: 2rem;
   }
 }/*# sourceMappingURL=About.css.map */

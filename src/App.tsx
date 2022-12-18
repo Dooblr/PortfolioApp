@@ -14,6 +14,8 @@ import { Home } from "./Components/Home/Home";
 import Navbar from './Components/Navbar/Navbar';
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Resume from "./Components/Resume/Resume";
+import { Services } from "./Components/Services/Services";
+import { Skills } from "./Components/Skills/Skills";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDBMabNYH2DyzUUawlGM2XM21AqM5FTCyM",
@@ -56,7 +58,9 @@ export function App() {
             <Routes>
               <Route path='/' element={ <Home/> }></Route>
               <Route path='/home' element={ <Home/> }></Route>
+              <Route path='/services' element={ <Services/> }></Route>
               <Route path='/portfolio' element={ <Portfolio/> }></Route>
+              <Route path='/skills' element={ <Skills/> }></Route>
               <Route path='/resume' element={ <Resume/> }></Route>
               <Route path='/about' element={ <About/> }></Route>
               <Route path='/contact' element={ <Contact/> }></Route>

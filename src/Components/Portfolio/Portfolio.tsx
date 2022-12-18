@@ -51,7 +51,7 @@ const portfolioData = [
                     </>}
                     {!videoMode && <>
                         <h2>Technologies used:</h2>
-                        <div className="short-br"/>
+                        <div className="sbr"/>
                         <div className="flex-row space-evenly">
                             <List spacing={3}>
                                 <ListItem>
@@ -121,7 +121,7 @@ const portfolioData = [
                     </>}
                     {!videoMode && <>
                         <h2>Technologies used:</h2>
-                        <div className="short-br"/>
+                        <div className="br"/>
                         <div className="flex-row space-evenly">
                             <List spacing={3}>
                                 <ListItem>
@@ -189,7 +189,7 @@ const portfolioData = [
                     </Center>
                     <br/>
                     <h2>Technologies used:</h2>
-                    <div className="short-br"/>
+                    <div className="sbr"/>
                     <div className="flex-row space-evenly">
                         <List spacing={3}>
                             <ListItem>
@@ -395,9 +395,9 @@ function Portfolio(){
 
     return(
         <>
-        <Divider orientation='horizontal'/>
-        <h1>portfolio</h1>
-        <Divider orientation='horizontal'/>
+        {/* <Divider orientation='horizontal'/> */}
+        <h1>Portfolio</h1>
+        {/* <Divider orientation='horizontal'/> */}
         
         <SimpleGrid columns={[1,2,3]} spacing='0.5em' id="portfolio-container">
             {portfolioData.map((portfolioItem, index)=>{
@@ -413,8 +413,8 @@ function Portfolio(){
             })}
         </SimpleGrid>
         <Divider orientation='horizontal'/>
-        <h1>past projects</h1>
-        <Divider orientation='horizontal'/>
+        <h1>Past Projects</h1>
+        {/* <Divider orientation='horizontal'/> */}
         <SimpleGrid columns={[1,2,3]} spacing='0.5em' id="portfolio-container">
             {portfolioDataLegacy.map((portfolioItem, index)=>{
                 return(

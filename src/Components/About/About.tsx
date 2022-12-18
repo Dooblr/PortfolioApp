@@ -4,86 +4,66 @@ import { useCallback, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import './About.css'
 
+import dan_rosie_pic from '../../Assets/dan_rosie.webp'
+import dj_pic from '../../Assets/dj_pic.webp'
+import koji2 from '../../Assets/koji2.webp'
+import koji3 from '../../Assets/koji3.webp'
+import koji6 from '../../Assets/koji6.webp'
+import profile_pic from '../../Assets/profile_pic.webp'
+
+import CrossfadeImage from 'react-crossfade-image'
+
 function sleep(ms:number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function About() {
 
-    // Firebase storage
-    const storage = getStorage();
-
-    // Currently showing pic
-    const [pic, setPic] = useState('')
     // Image loaded
     const [imageLoaded, setImageLoaded] = useState(false)
-
-    // Holds list of pic urls
-    const [slideshowPics, setSlideshowPics] = useState<string[]>([])
 
     // Delay between pic transitions
     const transitionDelay = 4000
     
     // List of filenames to query from firebase storage. They cannot be batch queried so this list is necessary
-    const kojiPicNames = ['dj_pic.jpg','koji2.jpg','koji3.jpg','koji4.jpg','koji5.jpg','koji6.jpg',]
-    // To be filled by firebase storage
-    let kojiPicsUrls:any[] = []
-    
-    // Incrememnt index and set new picture
-    let picIndex2 = 0
-    const nextPicture = useCallback(()=>{
-      picIndex2++
-      if (picIndex2 > kojiPicNames.length - 1){picIndex2 = 0}
-      setPic(slideshowPics[picIndex2])
-    },[slideshowPics])
+    const slideShowUrls = [dan_rosie_pic, dj_pic, koji2, koji3, koji6, profile_pic]
+
+    const [slideShowIndex,setSlideShowIndex] = useState(0)
+
+    function advanceSlideshow(){
+      if (slideShowIndex < slideShowUrls.length - 1){
+        setSlideShowIndex(slideShowIndex + 1)
+      } else {
+        setSlideShowIndex(0)
+      }
+    }
 
     useEffect(()=>{
-
-      // Get the google download links for all pictures
-      kojiPicNames.forEach((pic)=>{
-          getDownloadURL(ref(storage, `about_slideshow/${pic}`))
-          .then((url) => {
-            kojiPicsUrls.push(url)
-          })
-      })
-      // Remove duplicates
-      kojiPicsUrls = kojiPicsUrls.filter(url => !kojiPicsUrls.includes(url));
-      setSlideshowPics(kojiPicsUrls)
-      
-      // Set DJ pic as the first TODO: make this automatic
-      getDownloadURL(ref(storage, 'about_slideshow/dj_pic.jpg'))
-      .then((url) => {
-        setPic(url)
-      })
-    },[])
-
-    useEffect(()=>{
-      // thing.onchange() = thing?.classList.add('picAnimation')
-      if(slideshowPics){
-        nextPicture()
-        const interval = setInterval(nextPicture, transitionDelay);
-        
+      if(slideShowUrls){
+        const interval = setInterval(advanceSlideshow, transitionDelay);
         return () => clearInterval(interval);
       }
-    },[slideshowPics, nextPicture])
+    },[advanceSlideshow])
     
     return (
         <>
-            <Divider orientation='horizontal'/>
-            <h1>about</h1>
-            <Divider orientation='horizontal'/>
+            {/* <Divider orientation='horizontal'/> */}
+            <h1>About</h1>
+            {/* <Divider orientation='horizontal'/> */}
             
             {/* <br/> */}
             <Stack direction={{base:'column',md:'row'}} display='flex' justifyContent="center">
 
                     {/* Slideshow image */}
-                    <img alt="" 
-                          id="about-pic" 
-                          className='about-pic' 
-                          src={pic}
-                          onLoad={()=>{setImageLoaded(true)}}
-                          hidden={!imageLoaded}
-                          />
+                    {/* <div id='about-pic-container'> */}
+
+                      <img alt="" 
+                            className="about-pic"
+                            src={slideShowUrls[slideShowIndex]}
+                            onLoad={()=>{setImageLoaded(true)}}
+                            hidden={!imageLoaded}
+                            />
+                    {/* </div> */}
                     {/* Loading spinner */}
                     {!imageLoaded &&
                         <Center>
@@ -101,27 +81,25 @@ export default function About() {
                         
                         {/* <h1 className="headline">Programmer, Artist</h1> */}
                         <p id="about-text">
-                            Hello world! My name is Dan Feinstein. I've been writing code since 
-                            I took a class that taught audio and midi programming
-                            using the C language during my junior year at Berklee College of Music.
-                            <br/><br/>
-                            At my first job out of college, I took on the task of porting a Windows application to
-                            iOS and Android. After seeing the power that modern languages provide, I was hooked.
-                            <br/><br/>
-                            Since that project I've been writing web and mobile applications as a hobby developer, 
-                            and I've made the decision to take it to the next level.
-                            <br/><br/>
-                            When I'm not writing code I'm hanging with my dog Koji, listening to electronic music, 
-                            or being active, outdoors, and cooking with my better half, Rosie!
-                            <br/><br/>
-                            If you're a recruiter or would like to hire me for a project, click the button below
-                            to get in touch:
+                          I've been writing code since 2015, in which 
+                          I learned to write simple audio and MIDI programs in C and CSound.
+                          <br/><br/>
+                          At my first job out of college, I began learning application development, and within a few months
+                          had ported a proprietary Windows application to both iOS and Android (Ethernet Device Discoverer).
+                          <br/><br/>
+                          Since then I've continued as a freelance developer, building websites and more recently, 
+                          writing web applications with React, a library for building reusable web components.
+                          <br/><br/>
+                          When I'm not behind a keyboard, I'm hanging out with 
+                          my girlfrind Rosie and my dog Koji out in nature or a music festival.
+                          <br/><br/> 
+                          Click below to inquire about pricing and employment:
                         </p>
                         <div/>
-                        <div className="short-br"/>
+                        <div className="sbr"/>
                         <div className="flex-row hidden-sm">
                             <Link to="/contact" className="w-100">
-                                <Button colorScheme='teal' size='lg' w="67%">contact</Button>
+                                <Button colorScheme='teal' size='lg' w="67%">Contact</Button>
                             </Link>
                         </div>
 

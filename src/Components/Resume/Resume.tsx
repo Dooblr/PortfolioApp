@@ -10,7 +10,6 @@ export default function Resume(){
     useEffect(()=>{
         getDownloadURL(ref(storage, 'feinstein_webdev_resume_221213.pdf'))
           .then((url) => {
-            console.log(url)
             setResumeUrl(url)
           })
           .catch((error) => {});
@@ -18,9 +17,9 @@ export default function Resume(){
 
     return (
         <>
-            <Divider orientation='horizontal'/>
-            <h1>resume</h1>
-            <Divider orientation='horizontal'/>
+            {/* <Divider orientation='horizontal'/> */}
+            <h1>Resume</h1>
+            {/* <Divider orientation='horizontal'/> */}
             <a href={resumeUrl} download>
                 <Button size="lg" colorScheme="teal">Download</Button>
             </a>

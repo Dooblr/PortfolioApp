@@ -75,9 +75,9 @@ export default function Contact() {
 
     return (
         <>
-            <Divider orientation='horizontal'/>
-            <h1>contact</h1>
-            <Divider orientation='horizontal'/>
+            {/* <Divider orientation='horizontal'/> */}
+            <h1>Contact</h1>
+            {/* <Divider orientation='horizontal'/> */}
 
             <Stack direction={{base:'column',md:'row'}} display='flex' justifyContent="center"> 
                 
