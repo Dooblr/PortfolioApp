@@ -1,7 +1,30 @@
 .skills-grid-box{
   background-color: rgba(0,0,0,0.3);
   border-radius:1rem;
-  padding:1rem;
   width:20rem;
-  height:20rem;
+  height:fit-content;
+  text-align: start;
+
+  h2{
+    // background: red;
+    color:rgba(255,255,255,0.8);
+    text-align:center;
+    background: rgba(0,0,0,0.3);
+    padding:.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Comfortaa', Arial;
+    font-weight: bold !important;
+  }
+
+  .skills-column-text{
+    margin-bottom: .25rem;
+  }
+
+  .skills-list-container{
+    display:block;
+    margin:auto;
+    margin-bottom:1rem;
+  }
 }
+

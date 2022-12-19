@@ -17,9 +17,7 @@ export default function Resume(){
 
     return (
         <>
-            {/* <Divider orientation='horizontal'/> */}
             <h1>Resume</h1>
-            {/* <Divider orientation='horizontal'/> */}
             <a href={resumeUrl} download>
                 <Button size="lg" colorScheme="teal">Download</Button>
             </a>

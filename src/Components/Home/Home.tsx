@@ -1,12 +1,10 @@
 import { Button, Center, Image, SimpleGrid, Spinner, Stack, VStack } from "@chakra-ui/react"
-import { getDownloadURL, getStorage, ref } from "firebase/storage"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import useAsyncEffect from "use-async-effect"
-import '../../App.css'
-import "./Home.css"
-import profilePic from '../../Assets/profile_pic.webp'
 import { FaDotCircle } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import '../../App.css'
+import profilePic from '../../Assets/profile_pic.webp'
+import "./Home.css"
 
 export function Home() {
 
@@ -42,22 +40,20 @@ export function Home() {
                             <h1 id="home-headline">Dan Feinstein</h1>
                             
                             <div className='sbr'/>
-                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Web developer and Audiovisual engineer providing websites, applications, and other digital services.</h2>
-                            {/* <div className='sbr'/> */}
-                            
-                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Seeking a position as a React developer.</h2> 
+                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Freelance Web Developer providing websites, applications, and digital media services.</h2>
+                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Seeking a full-time position as a React developer.</h2> 
                             <h2 className='home-subheadline'><FaDotCircle className='home-subtext-bullet'/> Use the navigation bar or the buttons below to learn more.</h2>
                         <div/>
                         <div className="sbr"/>
                             {isMobile &&
-                                <SimpleGrid columns={2} spacing={2} w='100%'>
-                                    <Link to="/portfolio">
+                                <SimpleGrid columns={2} spacing={2} w='100%' className='direct-button-grid'>
+                                    <Link to="/services">
                                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Services</Button>
                                     </Link>
                                     <Link to="/portfolio">
                                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Portfolio</Button>
                                     </Link>
-                                    <Link to="/portfolio">
+                                    <Link to="/skills">
                                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Skills</Button>
                                     </Link>
                                     <Link to="/contact">
@@ -89,14 +85,14 @@ export function Home() {
 
             {!isMobile &&
             <Center>
-                <SimpleGrid columns={2} spacing={2} w='50%'>
-                    <Link to="/portfolio">
+                <SimpleGrid columns={2} spacing={2} w='67%' className='direct-button-grid'>
+                    <Link to="/services">
                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Services</Button>
                     </Link>
                     <Link to="/portfolio">
                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Portfolio</Button>
                     </Link>
-                    <Link to="/portfolio">
+                    <Link to="/skills">
                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Skills</Button>
                     </Link>
                     <Link to="/contact">

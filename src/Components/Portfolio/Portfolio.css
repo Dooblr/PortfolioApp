@@ -37,4 +37,12 @@
 
 .modal-button {
   margin: 0.25rem;
+}
+
+.portfolio-icon {
+  display: block;
+  margin: auto;
+  margin-top: 0.5rem;
+  padding-bottom: 0;
+  font-size: 3rem;
 }/*# sourceMappingURL=Portfolio.css.map */

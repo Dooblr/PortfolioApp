@@ -54,14 +54,15 @@
         display:inline-block;
         width:'2rem';
         color:rgb(129,230,217);
-        transform:translate(-.25rem,.2rem)
+        transform:translate(-.5rem,.2rem)
     }
 }
 
-// #menu-label{
-//     margin-left: .5rem;
-// }
-
+.direct-button-grid{
+    button{
+        border-radius:1rem;
+    }  
+}
 
 #profile-wrapper{
     width:100%;

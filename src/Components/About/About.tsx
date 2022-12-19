@@ -1,6 +1,5 @@
-import { Button, Divider, Spinner, Stack, VStack, Center } from "@chakra-ui/react"
-import { getDownloadURL, getStorage, ref } from "firebase/storage"
-import { useCallback, useEffect, useState } from "react"
+import { Button, Center, Spinner, Stack, VStack } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import './About.css'
 
@@ -10,12 +9,6 @@ import koji2 from '../../Assets/koji2.webp'
 import koji3 from '../../Assets/koji3.webp'
 import koji6 from '../../Assets/koji6.webp'
 import profile_pic from '../../Assets/profile_pic.webp'
-
-import CrossfadeImage from 'react-crossfade-image'
-
-function sleep(ms:number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 export default function About() {
 
@@ -81,14 +74,13 @@ export default function About() {
                         
                         {/* <h1 className="headline">Programmer, Artist</h1> */}
                         <p id="about-text">
-                          I've been writing code since 2015, in which 
-                          I learned to write simple audio and MIDI programs in C and CSound.
+                          Hey, I'm Dan! I've been writing code since 2015, during a class that taught audio and MIDI programming using the C language at Berklee College of Music in Boston, MA.
                           <br/><br/>
-                          At my first job out of college, I began learning application development, and within a few months
-                          had ported a proprietary Windows application to both iOS and Android (Ethernet Device Discoverer).
+                          After graduating and moving to San Luis Obpiso, CA, I began learning application development and within 3 months
+                          ported a proprietary applcation for QSC Cinema from Windows to iOS and Android.
                           <br/><br/>
-                          Since then I've continued as a freelance developer, building websites and more recently, 
-                          writing web applications with React, a library for building reusable web components.
+                          Since then, I've been focused on honing my mobile and web application development skills and currently work as a freelance developer for local
+                          businesses and online clients.
                           <br/><br/>
                           When I'm not behind a keyboard, I'm hanging out with 
                           my girlfrind Rosie and my dog Koji out in nature or a music festival.

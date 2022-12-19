@@ -1,19 +1,40 @@
 .portfolio-card-body {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   margin: 0;
   margin-top: 1rem;
-  padding: 1rem;
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 25px !important;
+}
+.portfolio-card-body :nth-child(2) {
+  margin: 1rem;
 }
 .portfolio-card-body h2 {
   font-size: 1rem;
 }
 
-.title {
+.portfolio-title {
   font-size: 1.25rem !important;
-  text-align: left !important;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-family: "Comfortaa", Arial;
+  font-weight: bold !important;
+  text-align: center;
+  max-height: 10rem;
+}
+
+.portfolio-icon {
+  font-size: 3rem !important;
+}
+
+.portfolio-card-button {
+  width: 80%;
+  display: block;
+  margin: auto;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=PortfolioCard.css.map */

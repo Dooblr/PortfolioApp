@@ -1,7 +1,27 @@
 .skills-grid-box {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
-  padding: 1rem;
   width: 20rem;
-  height: 20rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: start;
+}
+.skills-grid-box h2 {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Comfortaa", Arial;
+  font-weight: bold !important;
+}
+.skills-grid-box .skills-column-text {
+  margin-bottom: 0.25rem;
+}
+.skills-grid-box .skills-list-container {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=Skills.css.map */

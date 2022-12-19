@@ -44,19 +44,19 @@ export default function Navbar() {
           {/* <Box display={{ md: 'none' }} id='menu-label'>Menu</Box> */}
           
           {/* <HStack spacing={{sm:3,md:5,lg:8}} alignItems={'center'}> */}
-            {/* <HStack> */}
+            <HStack>
               {/* <Spacer/> */}
               {/* <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MdLightMode/> : <MdDarkMode/>}
               </Button> */}
               {/* <Spacer/> */}
-              {/* <p id='navbar-name'>Dan Feinstein</p> */}
-              {/* <Spacer/> */}
-              {/* <Avatar
-                    size={'md'}
-                    src={shiba96}
-                  /> */}
-            {/* </HStack> */}
+              <p id='navbar-name'>Dan Feinstein</p>
+              <Spacer/>
+              <Avatar
+                size={'md'}
+                src={shiba96}
+              />
+            </HStack>
             
             {/* Tablet/Desktop nav buttons */}
             <HStack

@@ -15,11 +15,11 @@ import PortfolioCard from './PortfolioCard/PortfolioCard'
 // Current projects
 const portfolioData = [
     {
-        id:2,
+        id:1,
         title:"Ursabase",
         description:"Form manager for a local Mower & Saw business",
         video_url:"https://www.youtube.com/watch?v=veqBriiuZM0",
-        avatar:<FaPaw size="3em"/>,
+        avatar:<FaPaw className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
                 const [videoMode, setVideoMode] = useState(false)
@@ -30,19 +30,12 @@ const portfolioData = [
                         It was created to replace the paper-based system and has improved efficiency and productivity.<br/><br/>
                         Technicians receive new equipment for repair and creat a 'Triage Sheet'. This sheet is filled in with
                         information about the equipment to be repaired. It is then read by the parts manager who gathers and orders the necessary parts.
-                        
                     </Text>
                     <br/>
                     <Center>
 
                     <div className="button-row">
-                        {/* <div><Button className="modal-button" onClick={()=>{setVideoMode(!videoMode)}}variant="outline" colorScheme="teal">{videoMode === true ? 'hide video' : 'watch a demo'}</Button></div> */}
                         <a target='_blank' rel="noreferrer" href="https://ursabase.web.app/"><Button className="modal-button" variant="outline" colorScheme="teal">go to the app</Button></a>
-                        {/* <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/DiscoList">
-                            <Button className="modal-button" variant="outline" colorScheme="teal">
-                                <HStack><AiFillGithub/><p>Github</p></HStack>
-                            </Button>
-                        </a> */}
                     </div>    
                     </Center>
                     <br/>
@@ -91,7 +84,7 @@ const portfolioData = [
         title:"DiscoList",
         description:"Turn record labels into Spotify Playlists.",
         video_url:"https://youtu.be/grQ_ANiDf3Y",
-        avatar:<MdQueueMusic size="3em"/>,
+        avatar:<MdQueueMusic className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
                 const [videoMode, setVideoMode] = useState(false)
@@ -106,7 +99,6 @@ const portfolioData = [
                     <Center>
 
                     <div className="button-row">
-                        {/* <div><Button className="modal-button" onClick={()=>{setVideoMode(!videoMode)}}variant="outline" colorScheme="teal">{videoMode === true ? 'hide video' : 'watch a demo'}</Button></div> */}
                         <a target='_blank' rel="noreferrer" href="https://disco-list.com/"><Button className="modal-button" variant="outline" colorScheme="teal">go to the app</Button></a>
                         <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/DiscoList">
                             <Button className="modal-button" variant="outline" colorScheme="teal">
@@ -167,9 +159,9 @@ const portfolioData = [
     },
     {
         id:3,
-        title:"Portfolio Website",
+        title:"Portfolio",
         description:"This website is running React!",
-        avatar:<MdWeb size="3em"/>,
+        avatar:<MdWeb className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
                 return (
@@ -214,10 +206,94 @@ const portfolioData = [
 const portfolioDataLegacy = [
     {
         id:1,
+        title:"Ethernet Device Discoverer",
+        description:`Control and view details about theater equipment`,
+        video_url:'https://www.youtube.com/shorts/h_pUh8F0r8A',
+        avatar:<AiOutlineWifi className='portfolio-icon'/>,
+        modalBody:
+            function ModalBody(){
+                return (
+                    <>
+                    <Text>
+                        A tool for users of Ultra Stereo Labs (now owned by QSC) to find information about their devices
+                        such as IP address and theater location, as well as access web control interfaces for each device.
+                        It was originally a Windows application, and I ported it to both iOS (Swift) and Android (Java).
+                    </Text>
+                    <br/>
+                    <Center>
+
+                    <a target='_blank' rel="noreferrer" href="https://github.com/ultrastereolabs/EDDiOS"><Button variant="outline" colorScheme="teal"><AiFillGithub/><div className="h-spacer"/>Github</Button></a>
+                    </Center>
+                    <br/>
+                    <h2>Technologies used:</h2>
+                    <br/>
+                    <Center>
+                        <List spacing={3}>
+                            <ListItem>
+                                <ListIcon fontSize="1rem" as={SiSwift} color='teal.500' className="icon"/>Swift
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={AiFillApple} color='teal.500' />UIKit
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={AiFillApple} color='teal.500' />CocoaPods
+                            </ListItem>
+                        </List>
+                    </Center>
+                    </>
+                )
+            }
+    },
+    {
+        id:2,
+        title:"Network Speed Monitor",
+        description:`Continuously test internet speeds and generate reports`,
+        video_url:null,
+        avatar:<MdNetworkCheck className='portfolio-icon'/>,
+        modalBody:
+            function ModalBody(){
+                return (
+                    <>
+                    <Text>
+                        Network Speed Monitor is a tool I developed because I had tested my network many times
+                        and noticed that the speeds were not nearly what I was paying for. I wrote this app to
+                        continuously run in the background and generate reports of my network speeds.
+                        After completion, I used the report in this app to get a partial refund on my internet bill.
+                    </Text>
+                    <br/>
+                    <Center>
+
+                    <a target='_blank' rel="noreferrer" href="https://github.com/dooblr/networkspeedmonitor"><Button variant="outline" colorScheme="teal"><AiFillGithub/><div className="h-spacer"/>Github</Button></a>
+                    </Center>
+                    <br/>
+                    <h2>Technologies used:</h2>
+                    <br/>
+                    <Center>
+                        <List spacing={3}>
+                            <ListItem>
+                                <ListIcon fontSize="1rem" as={SiSwift} color='teal.500' className="icon"/>Swift
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={FaSwift} color='teal.500' />SwiftUI
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={BiNetworkChart} color='teal.500' />AlamoFire
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={AiFillApple} color='teal.500' />CocoaPods
+                            </ListItem>
+                        </List>
+                    </Center>
+                    </>
+                )
+            }
+    },
+    {
+        id:3,
         title:"Bigger Fish",
         description:"A motion-based iOS game based on eating smaller fish to grow larger and earn points.",
         video_url:null,
-        avatar:<FaFish size="3em"/>,
+        avatar:<FaFish className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
                 return (
@@ -259,95 +335,11 @@ const portfolioDataLegacy = [
             }
     },
     {
-        id:2,
-        title:"Ethernet Device Discoverer",
-        description:`Control and view details about theater equipment`,
-        video_url:'https://www.youtube.com/shorts/h_pUh8F0r8A',
-        avatar:<AiOutlineWifi size="3em"/>,
-        modalBody:
-            function ModalBody(){
-                return (
-                    <>
-                    <Text>
-                        A tool for users of Ultra Stereo Labs (now owned by QSC) to find information about their devices
-                        such as IP address and theater location, as well as access web control interfaces for each device.
-                        It was originally a Windows application, and I ported it to both iOS (Swift) and Android (Java).
-                    </Text>
-                    <br/>
-                    <Center>
-
-                    <a target='_blank' rel="noreferrer" href="https://github.com/ultrastereolabs/EDDiOS"><Button variant="outline" colorScheme="teal"><AiFillGithub/><div className="h-spacer"/>Github</Button></a>
-                    </Center>
-                    <br/>
-                    <h2>Technologies used:</h2>
-                    <br/>
-                    <Center>
-                        <List spacing={3}>
-                            <ListItem>
-                                <ListIcon fontSize="1rem" as={SiSwift} color='teal.500' className="icon"/>Swift
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={AiFillApple} color='teal.500' />UIKit
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={AiFillApple} color='teal.500' />CocoaPods
-                            </ListItem>
-                        </List>
-                    </Center>
-                    </>
-                )
-            }
-    },
-    {
-        id:3,
-        title:"Network Speed Monitor",
-        description:`Continuously test internet speeds and generate reports`,
-        video_url:null,
-        avatar:<MdNetworkCheck size="3em"/>,
-        modalBody:
-            function ModalBody(){
-                return (
-                    <>
-                    <Text>
-                        Network Speed Monitor is a tool I developed because I had tested my network many times
-                        and noticed that the speeds were not nearly what I was paying for. I wrote this app to
-                        continuously run in the background and generate reports of my network speeds.
-                        After completion, I used the report in this app to get a partial refund on my internet bill.
-                    </Text>
-                    <br/>
-                    <Center>
-
-                    <a target='_blank' rel="noreferrer" href="https://github.com/dooblr/networkspeedmonitor"><Button variant="outline" colorScheme="teal"><AiFillGithub/><div className="h-spacer"/>Github</Button></a>
-                    </Center>
-                    <br/>
-                    <h2>Technologies used:</h2>
-                    <br/>
-                    <Center>
-                        <List spacing={3}>
-                            <ListItem>
-                                <ListIcon fontSize="1rem" as={SiSwift} color='teal.500' className="icon"/>Swift
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={FaSwift} color='teal.500' />SwiftUI
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={BiNetworkChart} color='teal.500' />AlamoFire
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={AiFillApple} color='teal.500' />CocoaPods
-                            </ListItem>
-                        </List>
-                    </Center>
-                    </>
-                )
-            }
-    },
-    {
         id:4,
         title:"Theaterbae",
         description:`Find new movies based on what you've seen`,
         video_url:null,
-        avatar:<BsFilm size="3em"/>,
+        avatar:<BsFilm className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
                 return (
