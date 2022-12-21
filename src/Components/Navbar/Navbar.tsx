@@ -1,32 +1,15 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
-  Avatar, Box, Button, Flex, HStack, IconButton, Spacer, Stack, Text, useColorMode, useColorModeValue, useDisclosure
+  Avatar, Box, Button, Flex, HStack, IconButton, Spacer, Stack, useColorModeValue, useDisclosure
 } from '@chakra-ui/react';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { Link as ReactLink } from 'react-router-dom';
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import { useEffect, useState } from 'react';
-import shiba96 from '../../Assets/shiba96.png'
-import './Navbar.css'
+import shiba96 from '../../Assets/shiba96.png';
+import './Navbar.css';
 
 const Links = ['home', 'services', 'portfolio', 'skills', 'resume', 'about', 'contact']
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const { colorMode, toggleColorMode } = useColorMode()
-
-  // State for async setting avatar pic
-  const [kojiPicUrl, setKojiPicUrl] = useState("")
-  const storage = getStorage();
-  
-  useEffect(()=>{
-    getDownloadURL(ref(storage, 'koji1.jpg'))
-      .then((url) => {
-        // console.log(url)
-        setKojiPicUrl(url)
-      })
-      .catch((error) => {});
-  },[])
 
   return (
     <>
@@ -44,19 +27,19 @@ export default function Navbar() {
           {/* <Box display={{ md: 'none' }} id='menu-label'>Menu</Box> */}
           
           {/* <HStack spacing={{sm:3,md:5,lg:8}} alignItems={'center'}> */}
-            <HStack>
+            {/* <HStack> */}
               {/* <Spacer/> */}
               {/* <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MdLightMode/> : <MdDarkMode/>}
               </Button> */}
               {/* <Spacer/> */}
-              <p id='navbar-name'>Dan Feinstein</p>
-              <Spacer/>
-              <Avatar
+              {/* <p id='navbar-name'>Dan Feinstein</p> */}
+              {/* <Spacer/> */}
+              {/* <Avatar
                 size={'md'}
                 src={shiba96}
-              />
-            </HStack>
+              /> */}
+            {/* </HStack> */}
             
             {/* Tablet/Desktop nav buttons */}
             <HStack

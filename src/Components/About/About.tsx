@@ -36,6 +36,7 @@ export default function About() {
         const interval = setInterval(advanceSlideshow, transitionDelay);
         return () => clearInterval(interval);
       }
+    // eslint-disable-next-line
     },[advanceSlideshow])
     
     return (
@@ -74,18 +75,18 @@ export default function About() {
                         
                         {/* <h1 className="headline">Programmer, Artist</h1> */}
                         <p id="about-text">
-                          Hey, I'm Dan! I've been writing code since 2015, during a class that taught audio and MIDI programming using the C language at Berklee College of Music in Boston, MA.
+                          Hello! My name is Dan and I love to solve problems. I've been writing code since 2015, during a class that taught audio and MIDI programming using the C language at Berklee College of Music in Boston, MA.
                           <br/><br/>
                           After graduating and moving to San Luis Obpiso, CA, I began learning application development and within 3 months
-                          ported a proprietary applcation for QSC Cinema from Windows to iOS and Android.
+                          ported a proprietary applcation from Windows to iOS and Android for QSC's Cinema Division.
                           <br/><br/>
                           Since then, I've been focused on honing my mobile and web application development skills and currently work as a freelance developer for local
                           businesses and online clients.
                           <br/><br/>
                           When I'm not behind a keyboard, I'm hanging out with 
-                          my girlfrind Rosie and my dog Koji out in nature or a music festival.
+                          my girlfrind Rosie and my dog Koji out in nature or a music festival!
                           <br/><br/> 
-                          Click below to inquire about pricing and employment:
+                          Click below to inquire about your project, pricing, or open developer position:
                         </p>
                         <div/>
                         <div className="sbr"/>
