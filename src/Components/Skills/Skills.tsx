@@ -1,5 +1,5 @@
 import { HStack, SimpleGrid } from "@chakra-ui/react"
-import { AiFillAudio, AiFillGithub, AiOutlineApple, AiOutlineGoogle } from "react-icons/ai"
+import { AiFillAmazonCircle, AiFillAudio, AiFillGithub, AiOutlineApple, AiOutlineGoogle } from "react-icons/ai"
 import { BiGitRepoForked } from "react-icons/bi"
 import { BsFillBootstrapFill, BsPaintBucket } from "react-icons/bs"
 import { DiSwift } from 'react-icons/di'
@@ -32,7 +32,7 @@ export function Skills(){
           <div>
             <p className='skills-column-text'><GrHeroku className='service-icon'/> Heroku</p>
             <p className='skills-column-text'><FaDocker className='service-icon'/> Docker</p>
-            <p className='skills-column-text'><FaReact className='service-icon'/> AWS</p>
+            <p className='skills-column-text'><AiFillAmazonCircle className='service-icon'/> AWS EC2</p>
             <p className='skills-column-text'><BiGitRepoForked className='service-icon'/> Git</p>
             <p className='skills-column-text'><AiFillGithub className='service-icon'/> GitHub</p>
             {/* <div style={{height:'2rem'}}>asdf</div> */}

@@ -7,6 +7,7 @@ import { FaFish, FaPaw, FaReact, FaSwift } from 'react-icons/fa'
 import { IoLogoFirebase } from 'react-icons/io5'
 import { MdCheckCircle, MdList, MdNetworkCheck, MdQueueMusic, MdWeb } from 'react-icons/md'
 import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiFirebase, SiGoogle, SiReact, SiSwift } from 'react-icons/si'
+import {GiMineExplosion} from 'react-icons/gi'
 import ReactPlayer from 'react-player'
 import '../../App.css'
 import './Portfolio.css'
@@ -159,6 +160,49 @@ const portfolioData = [
     },
     {
         id:3,
+        title:"Reactsweeper",
+        description:"A Minesweeper clone made using React",
+        avatar:<GiMineExplosion className='portfolio-icon'/>,
+        modalBody:
+            function ModalBody(){
+                return (
+                    <>
+                    <Text>
+                        Reactsweeper is a clone of Minesweeper made using React. It was made from scratch, without any tutorials, external code, or a premade UI library! 
+                        This app is currently supported only on desktop chrome, edge, and firefox. Due to compatibility issues with mobile.
+                    </Text>
+                    <br/>
+                    <Center>
+                        <HStack>
+                            <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/ReactMinesweeper">
+                            <Button variant="outline" colorScheme="teal">
+                                <AiFillGithub/><div className="h-spacer"/>Github
+                            </Button></a>
+                        </HStack>
+                    </Center>
+                    <br/>
+                    <h2>Technologies used:</h2>
+                    <div className="sbr"/>
+                    <div className="flex-row space-evenly">
+                        <List spacing={3}>
+                            <ListItem>
+                                <ListIcon as={FaReact} color='teal.500' className="icon"/>React
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={SiChakraui} color='teal.500' />Chakra UI
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={SiGoogle} color='teal.500' />Firebase
+                            </ListItem>
+                        </List>
+
+                    </div>
+                    </>
+                )
+            }
+    },
+    {
+        id:4,
         title:"Portfolio",
         description:"This website is running React!",
         avatar:<MdWeb className='portfolio-icon'/>,
