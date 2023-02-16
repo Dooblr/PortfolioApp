@@ -1,50 +1,51 @@
-@import '../../Colors.scss';
+// @import '../../Theming/Colors.scss';
 
-// #about-container{
-//     @media screen and (min-width:768px) {
-//         // max-width:80vw;
-//     }
-//     // align-content: center;
-//     // background-color: red;
-// }
+.img-container{
+    height: fit-content;
+}
+
+.outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items:top;
+}
+
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.below {
+  z-index: 1;
+}
+.top {
+  z-index: 2;
+}
 
 .about-pic{
     object-fit:contain;
-
+    // position: absolute;
+    // top:0;
+    // left:0;
     @media only screen and (max-width:768px){
-        // width:33vw;
         height:15rem !important;
-        // background:blue;
         margin:auto;
-        // margin-bottom:5rem;
     }
     @media only screen and (min-width:768px){
         width:33vw;
         max-width:20rem;
     }
-    // align-self: flex-start;
     border-radius:25px;
-    // box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
-
-    // transform: translateY(1rem);
+    opacity: 1;
+    transition: opacity 2s;
+    // animation:fadeInOutHold;
+    // animation-duration: 4s;
+    // opacity:0;
+    // animation-timing-function: ease;
+    // animation-iteration-count: infinite;
 }
 
-#about-text{
-    font-size: medium;
-    text-align: left;
-    max-width:25rem;
-    @media screen and (min-width:768px) {
-        margin-left: 2rem;
-        // transform:translateX(2rem)
-    }
-    // @media screen and (min-width:1200px) {
-    //     // transform:translateX(-20px)
-    //     margin-left: 5rem;
-    // }
-
-    br{
-        height:.25rem
-    }
+.opacity-0{
+    opacity: 0;
 }
 
 // @keyframes fadeInOutHold {
@@ -52,4 +53,16 @@
 //     20% { opacity: 1; }
 //     80% { opacity: 1; }
 //     100% { opacity: 0; }
-//   }
+// }
+
+#about-text{
+    font-size: medium;
+    text-align: left;
+    max-width:25rem;
+    @media screen and (min-width:768px) {
+        margin-left: 2rem;
+    }
+    br{
+        height:.25rem
+    }
+}

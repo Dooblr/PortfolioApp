@@ -4,7 +4,7 @@ import PortfolioModal from "../PortfolioModal/PortfolioModal";
 import VideoModal from "../VideoModal/VideoModal";
 import './PortfolioCard.css';
 
-export default function PortfolioCard({id, description, video_url, title, avatar, modalBody}:any){
+export default function PortfolioCard({id, description, url, video_url, title, avatar, modalBody}:any){
 
     const openModal:any = useRef()
     function handleOpenModalClick() {
@@ -30,8 +30,16 @@ export default function PortfolioCard({id, description, video_url, title, avatar
                     
                     <h2 className='portfolio-card-description'>{description}</h2>
                     <Spacer/>
+                    
+                    {/* if site  url is present, render a button that navigates to it */}
+                    {url && <>
+                        <Button variant='outline' className='portfolio-card-button'
+                        colorScheme='teal' 
+                        size='lg'
+                        onClick={()=>{window.open(url,'_blank')}}>go to site</Button>
+                    </>}
 
-                    {/* if url is present, render a button that navigates to it */}
+                    {/* if video url is present, render a button that navigates to it */}
                     {video_url && <>
                         <VideoModal ref={openVideoModal} video_url={video_url}/>
                         <Button variant='outline' className='portfolio-card-button'

@@ -1,9 +1,7 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import {
-  Avatar, Box, Button, Flex, HStack, IconButton, Spacer, Stack, useColorModeValue, useDisclosure
-} from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, IconButton, Stack, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { Link as ReactLink } from 'react-router-dom';
-import shiba96 from '../../Assets/shiba96.png';
+// import shiba96 from '../../Assets/shiba96.png';
 import './Navbar.css';
 
 const Links = ['home', 'services', 'portfolio', 'skills', 'resume', 'about', 'contact']

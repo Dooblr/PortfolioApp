@@ -39,12 +39,12 @@ export function Home() {
                         </div>
                             <h1 id="home-headline">Dan Feinstein</h1>
                             
-                            <div className='sbr'/>
-                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Freelance Web Developer providing websites, applications, and digital media services.</h2>
-                            <h2 className="home-subheadline"><FaDotCircle className='home-subtext-bullet'/> Seeking a full-time position as a React developer.</h2> 
-                            <h2 className='home-subheadline'><FaDotCircle className='home-subtext-bullet'/> Use the navigation bar or the buttons below to learn more.</h2>
+                            {/* <div className='sbr'/> */}
+                            <h2 className="home-subheadline">Freelance developer providing websites, applications, and digital media services</h2>
+                            <h2 className="home-subheadline delay-1">Seeking a full-time position as a Frontend or Mobile Developer</h2> 
+                            <h2 className='home-subheadline delay-2'>Use the navigation menu or the buttons below to learn more</h2>
                         <div/>
-                        <div className="sbr"/>
+                        {/* <div className="sbr"/> */}
                             {isMobile &&
                                 <SimpleGrid columns={2} spacing={2} w='100%' className='direct-button-grid'>
                                     <Link to="/services">
@@ -57,7 +57,7 @@ export function Home() {
                                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Skills</Button>
                                     </Link>
                                     <Link to="/contact">
-                                        <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Hire me</Button>
+                                        <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Contact</Button>
                                     </Link>
                                 </SimpleGrid>
                             }
@@ -96,7 +96,7 @@ export function Home() {
                         <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Skills</Button>
                     </Link>
                     <Link to="/contact">
-                        <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Hire me</Button>
+                        <Button variant='outline' colorScheme='teal' size='lg' w='100%'>Contact</Button>
                     </Link>
                 </SimpleGrid>
             </Center>

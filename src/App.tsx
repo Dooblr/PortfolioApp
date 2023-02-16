@@ -1,5 +1,5 @@
 import {
-  Box, ChakraProvider, color, Grid, useColorMode, VStack, extendTheme, type ThemeConfig
+  Box, ChakraProvider, extendTheme, Grid, VStack, type ThemeConfig
 } from "@chakra-ui/react";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";

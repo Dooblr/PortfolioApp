@@ -1,1 +1,9 @@
-/*# sourceMappingURL=Resume.css.map */
+#resume-frame {
+  width: 100%;
+  max-width: 70rem;
+  min-height: 75rem;
+}
+
+.framer-container-resume {
+  width: 100%;
+}/*# sourceMappingURL=Resume.css.map */

@@ -2,9 +2,10 @@ import { Button, Center, Divider, HStack, List, ListIcon, ListItem, SimpleGrid, 
 import { useState } from 'react'
 import { AiFillApple, AiFillGithub, AiOutlineWifi } from 'react-icons/ai'
 import { BiNetworkChart } from 'react-icons/bi'
-import { BsFilm } from 'react-icons/bs'
-import { FaFish, FaPaw, FaReact, FaSwift } from 'react-icons/fa'
+import { BsFillJournalBookmarkFill, BsFilm } from 'react-icons/bs'
+import { FaCss3, FaFish, FaHtml5, FaPaw, FaReact, FaSwift } from 'react-icons/fa'
 import { IoLogoFirebase } from 'react-icons/io5'
+import { DiJavascript1 } from 'react-icons/di'
 import { MdCheckCircle, MdList, MdNetworkCheck, MdQueueMusic, MdWeb } from 'react-icons/md'
 import { SiBootstrap, SiChakraui, SiDocker, SiExpress, SiFirebase, SiGoogle, SiReact, SiSwift } from 'react-icons/si'
 import {GiMineExplosion} from 'react-icons/gi'
@@ -12,6 +13,10 @@ import ReactPlayer from 'react-player'
 import '../../App.css'
 import './Portfolio.css'
 import PortfolioCard from './PortfolioCard/PortfolioCard'
+import { motion } from 'framer-motion'
+import { motionVariantChild, motionVariantContainer } from '../../Misc/framerMotionVariants'
+
+
 
 // Current projects
 const portfolioData = [
@@ -83,6 +88,7 @@ const portfolioData = [
     {
         id:2,
         title:"DiscoList",
+        url:'https://disco-list.com/',
         description:"Turn record labels into Spotify Playlists.",
         video_url:"https://youtu.be/grQ_ANiDf3Y",
         avatar:<MdQueueMusic className='portfolio-icon'/>,
@@ -160,8 +166,54 @@ const portfolioData = [
     },
     {
         id:3,
+        title:"CaseKeepers.com",
+        description:"Website for the application CaseKeepers, a tool for legal and mental health professionals",
+        url:'https://Casekeepers.com',
+        avatar:<BsFillJournalBookmarkFill className='portfolio-icon'/>,
+        modalBody:
+            function ModalBody(){
+                return (
+                    <>
+                    <Text>
+                        CaseKeepers is a tool built for legal and mental health professionals that manages text, images, and other correspondance between clients and professionals.
+
+                        I designed and coded the website with support from the CaseKeepers software team.
+                    </Text>
+                    {/* <br/>
+                    <Center>
+                        <HStack>
+                            <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/ReactMinesweeper">
+                            <Button variant="outline" colorScheme="teal">
+                                <AiFillGithub/><div className="h-spacer"/>Github
+                            </Button></a>
+                        </HStack>
+                    </Center> */}
+                    <br/>
+                    <h2>Technologies used:</h2>
+                    <div className="sbr"/>
+                    <div className="flex-row space-evenly">
+                        <List spacing={3}>
+                            <ListItem>
+                                <ListIcon as={FaHtml5} color='teal.500' className="icon"/>HTML
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={FaCss3} color='teal.500' />CSS
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={DiJavascript1} color='teal.500' />JavaScript
+                            </ListItem>
+                        </List>
+
+                    </div>
+                    </>
+                )
+            }
+    },
+    {
+        id:4,
         title:"Reactsweeper",
         description:"A Minesweeper clone made using React",
+        url:'https://Reactsweeper.web.app/',
         avatar:<GiMineExplosion className='portfolio-icon'/>,
         modalBody:
             function ModalBody(){
@@ -430,30 +482,45 @@ const portfolioDataLegacy = [
 function Portfolio(){
 
     return(
-        <>
+      <motion.div
+        initial='hidden'
+        animate='show'
+        variants={motionVariantContainer}>
+
         {/* <Divider orientation='horizontal'/> */}
-        <h1>Portfolio</h1>
+        <motion.h1 variants={motionVariantChild}>Portfolio</motion.h1>
         {/* <Divider orientation='horizontal'/> */}
+        
         
         <SimpleGrid columns={[1,2,3]} spacing='0.5em' id="portfolio-container">
             {portfolioData.map((portfolioItem, index)=>{
                 return(
+                  <motion.div variants={motionVariantChild}>
                     <PortfolioCard key={index}
                         id={portfolioItem.id} 
                         title={portfolioItem.title} 
                         description={portfolioItem.description}
                         avatar={portfolioItem.avatar}
                         video_url={portfolioItem.video_url}
-                        modalBody={{body:portfolioItem.modalBody,title:portfolioItem.title}}/>
+                        modalBody={{body:portfolioItem.modalBody,title:portfolioItem.title}}
+                        url={portfolioItem.url}/>
+                  </motion.div>
                 )
             })}
         </SimpleGrid>
-        <Divider orientation='horizontal'/>
-        <h1>Past Projects</h1>
-        {/* <Divider orientation='horizontal'/> */}
+        
+
+        <motion.div variants={motionVariantChild}>
+          <Divider orientation='horizontal'/>
+        </motion.div>
+
+        <motion.h1 variants={motionVariantChild}>Past Projects</motion.h1>
+        
+        
         <SimpleGrid columns={[1,2,3]} spacing='0.5em' id="portfolio-container">
             {portfolioDataLegacy.map((portfolioItem, index)=>{
                 return(
+                  <motion.div variants={motionVariantChild}>
                     <PortfolioCard key={index}
                         id={portfolioItem.id} 
                         title={portfolioItem.title} 
@@ -461,10 +528,13 @@ function Portfolio(){
                         avatar={portfolioItem.avatar}
                         video_url={portfolioItem.video_url}
                         modalBody={{body:portfolioItem.modalBody,title:portfolioItem.title}}/>
+                  </motion.div>
                 )
             })}
         </SimpleGrid>
-        </>
+        
+
+      </motion.div>
     )
 }
 export default Portfolio
