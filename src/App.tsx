@@ -3,7 +3,7 @@ import {
 } from "@chakra-ui/react";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import WebFont from 'webfontloader';
 
 import './App.css';
@@ -32,11 +32,16 @@ const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: true,
 }
+
 const theme = extendTheme({config})
 
 export function App() {
 
-  const app = initializeApp(firebaseConfig);
+  // scroll to top on page change
+  const location = useLocation()
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[location])
 
   useEffect(()=>{
     // Load Google Webfonts
