@@ -9,6 +9,8 @@ import koji2 from '../../Assets/koji2.webp'
 import koji3 from '../../Assets/koji3.webp'
 import koji6 from '../../Assets/koji6.webp'
 import profile_pic from '../../Assets/profile_pic.webp'
+import { motion } from "framer-motion"
+import { motionVariantChild, motionVariantContainer } from "../../Misc/framerMotionVariants"
 
 export default function About() {
 
@@ -37,8 +39,8 @@ export default function About() {
 
     // Set image1 to next image, set image2 to previous image
     useEffect(()=>{
-      setImage2(image1)
       setImage1(slideShowUrls[slideShowIndex])
+      setImage2(image1)
     },[slideShowIndex])
 
     useEffect(()=>{
@@ -47,13 +49,20 @@ export default function About() {
     },[advanceSlideshow])
     
     return (
-        <>
-          <h1>About</h1>
+      <motion.div
+        initial='hidden'
+        animate='show'
+        variants={motionVariantContainer}
+        className='framer-container-resume'>
+
+          <motion.h1 variants={motionVariantChild}>About</motion.h1>
+
+          <br/>
           
           <Stack direction={{base:'column',md:'row'}} display='flex' justifyContent="center">
 
             {/* Slideshow image */}
-            <div className='img-container outer'>
+            <motion.div className='img-container outer' variants={motionVariantChild}>
 
               <img alt="" 
                 className={(slideShowIndex % 2 === 0) ? "about-pic top" : "about-pic opacity-0 below"}
@@ -66,7 +75,7 @@ export default function About() {
                 src={(slideShowIndex % 2 !== 0) ? image1 : image2}
                 />
               
-            </div>
+            </motion.div>
             
             {/* Loading spinner */}
             {!imageLoaded &&
@@ -80,11 +89,13 @@ export default function About() {
                   />
               </Center>
             }
+
+            <br/>
                   
             {/* Text box */}
             <VStack id="left-box">
                 
-              <p id="about-text">                          
+              <motion.p id="about-text" variants={motionVariantChild}>                          
                 I began coding In 2015, during an audio and MIDI programming class at Berklee College of Music.
                 <br/><br/>
                 After graduating and moving to San Luis Obispo, California, I taught myself application development and within 3 months
@@ -97,18 +108,22 @@ export default function About() {
                 my girlfriend Rosie and my dog Koji out in nature or a music festival!
                 <br/><br/> 
                 Click below to inquire about your project, pricing, or open developer position:
-              </p>
-              <div/>
+              </motion.p>
+
               <div className="sbr"/>
-              <div className="flex-row hidden-sm">
+
+              <motion.div className="flex-row hidden-sm" variants={motionVariantChild}>
                   <Link to="/contact" className="w-100">
                       <Button colorScheme='teal' size='lg' w="67%">Contact</Button>
                   </Link>
-              </div>
+              </motion.div>
 
               <br/>
+              
             </VStack>
+
           </Stack>
-        </>
+
+        </motion.div>
     )
 }

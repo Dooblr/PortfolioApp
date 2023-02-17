@@ -1,8 +1,5 @@
 @import '../../Theming/Colors.scss';
 
-// Colors:
-// $font-color - main cream font color
-
 #home-body{
     @media (min-width: 768px) {
         margin-top:0rem;
@@ -45,7 +42,6 @@
 
 $animation-interval:1s;
 .home-subheadline{
-    // margin-inline: 1rem;
     background-color: rgba(0,0,0,0.3);
     font-weight: bold !important;
     color:white;
@@ -53,41 +49,6 @@ $animation-interval:1s;
     box-shadow: 0rem .25rem .25rem rgba(0,0,0,0.5);
     padding:1rem;
     text-align: start;
-    // padding-left:2rem;
-    // text-indent:-1.5rem;
-    // background-color:red;
-    // max-width:30rem;
-    // .home-subtext-bullet{
-    //     display:inline-block;
-    //     width:'2rem';
-    //     color:rgb(129,230,217);
-    //     transform:translate(-.5rem,.2rem)
-    // }
-
-    animation:flyUp;
-    animation-duration: $animation-interval;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
-    opacity:0;
-}
-
-.delay-1{
-    animation-delay: calc($animation-interval / 2);
-}
-
-.delay-2{
-    animation-delay: $animation-interval;
-}
-
-@keyframes flyUp{
-    0%{
-        opacity: 0.0;
-        transform:translateY(100px)
-    }
-    100%{
-        opacity: 1.0;
-        transform:translateY(0px)
-    }
 }
 
 .direct-button-grid{
@@ -96,32 +57,34 @@ $animation-interval:1s;
     }  
 }
 
-#profile-wrapper{
-    width:100%;
-    @media (min-width: 768px) {
-        max-width:40vw;
-        margin-top:5rem;
-    };
+.profile-wrapper{
+  width:100%;
+  @media (min-width: 768px) {
+    // max-width:40vw;
+    // margin-top:5rem;
+  };
+  height: fit-content;
 
-    #profile-pic{
-        display: block;
-        margin: auto;
-        width:80%;
-        max-width:20rem;
-        margin-top:2rem;
-        border: none;
-        border-radius: 50%;
-        box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
-    }
+  #profile-pic-desktop{
+    display: block;
+    margin: auto;
+    width:80%;
+    max-width:20rem;
+    margin-top:5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.5rem $backgroundColor, 0 0 0 1rem $font-color;
+    
+  }
 
-    #profile-pic2{
-        position:absolute;
-        z-index: 2;
-        width:20%;
-        margin-left: 10rem;
-        max-width:4.5rem;
-        border-radius: 50%;
-    }
+  #profile-pic-mobile{
+    position:absolute;
+    z-index: 2;
+    width:20%;
+    margin-left: 10rem;
+    max-width:4.5rem;
+    border-radius: 50%;
+  }
 }
 
 
@@ -131,4 +94,12 @@ $animation-interval:1s;
     Button{
         width:80% !important;
     }
+}
+
+.home-mobile-nav-buttons{
+    width:100%;
+}
+
+#left-box{
+    height:fit-content;
 }

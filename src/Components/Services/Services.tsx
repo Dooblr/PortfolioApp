@@ -8,14 +8,22 @@ import './Services.css'
 import { BsFillLightbulbFill, BsPaintBucket } from "react-icons/bs"
 import { MdGraphicEq, MdAudiotrack } from "react-icons/md"
 import { SiAudiomack } from "react-icons/si"
+import { motion } from "framer-motion"
+import { motionVariantChild, motionVariantContainer } from "../../Misc/framerMotionVariants"
 
 export function Services(){
   return(
-    <>
-      <h1>Services</h1>
+    <motion.div
+					initial='hidden'
+					animate='show'
+					variants={motionVariantContainer}>
+
+      <motion.h1 variants={motionVariantChild}>Services</motion.h1>
+
+      <br/>
 
       <SimpleGrid columns={{base:1,md:2}} spacing={5}>
-        <div className='service-column'>
+        <motion.div className='service-column' variants={motionVariantChild}>
           <h2 className='service-header'>Web</h2>
           <div className='service-items-container'>
             <p className='service-column-text'><CgWebsite className='service-icon'/> Websites</p>
@@ -23,18 +31,18 @@ export function Services(){
             <p className='service-column-text'><AiOutlineCreditCard className='service-icon'/> E-Commerce</p>
             <p className='service-column-text'><BsFillLightbulbFill className='service-icon'/> IT Support</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className='service-column'>
+        <motion.div className='service-column' variants={motionVariantChild}>
           <h2 className='service-header'>Native</h2>
           <div className='service-items-container'>
             <p className='service-column-text'><AiOutlineApple className='service-icon'/> iOS apps</p>
             <p className='service-column-text'><AiOutlineApple className='service-icon'/> MacOS apps</p>
             <p className='service-column-text'><RiAndroidLine className='service-icon'/> Android apps</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className='service-column'>
+        <motion.div className='service-column' variants={motionVariantChild}>
           <h2 className='service-header'>Digital Media Services</h2>
           <div className='service-items-container'>
             <p className='service-column-text'><BsPaintBucket className='service-icon'/> Graphic Design</p>
@@ -43,9 +51,9 @@ export function Services(){
             <p className='service-column-text'><MdAudiotrack className='service-icon'/> Music Mixing</p>
             <p className='service-column-text'><SiAudiomack className='service-icon'/> Audio Repair</p>
           </div>
-        </div>
+        </motion.div>
 
       </SimpleGrid>
-    </>
+    </motion.div>
   )
 }
