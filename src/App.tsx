@@ -35,6 +35,9 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({config})
 
+// !!! NECESSARY FOR PDF (RESUME PAGE) + ANY FILE HOSTING !!! DO NOT REMOVE !!!
+const app = initializeApp(firebaseConfig);
+
 export function App() {
 
   // scroll to top on page change
@@ -43,8 +46,8 @@ export function App() {
     window.scrollTo(0, 0)
   },[location])
 
+  // Load Google Webfonts
   useEffect(()=>{
-    // Load Google Webfonts
     WebFont.load({
       google: {
         families:['Comfortaa'] // 'Open Sans','Bungee','Quicksand'

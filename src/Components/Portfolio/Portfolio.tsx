@@ -21,7 +21,7 @@ import { motionVariantChild, motionVariantContainer } from '../../Misc/framerMot
 // Current projects
 const portfolioData = [
     {
-        id:1,
+        id:0,
         title:"Ursabase",
         description:"Form manager for a local Mower & Saw business",
         video_url:"https://www.youtube.com/watch?v=veqBriiuZM0",
@@ -86,7 +86,7 @@ const portfolioData = [
             }
     },
     {
-        id:2,
+        id:1,
         title:"DiscoList",
         url:'https://disco-list.com/',
         description:"Turn record labels into Spotify Playlists.",
@@ -165,52 +165,7 @@ const portfolioData = [
             }
     },
     {
-        id:3,
-        title:"CaseKeepers.com",
-        description:"Website for the application CaseKeepers, a tool for legal and mental health professionals",
-        url:'https://Casekeepers.com',
-        avatar:<BsFillJournalBookmarkFill className='portfolio-icon'/>,
-        modalBody:
-            function ModalBody(){
-                return (
-                    <>
-                    <Text>
-                        CaseKeepers is a tool built for legal and mental health professionals that manages text, images, and other correspondance between clients and professionals.
-
-                        I designed and coded the website with support from the CaseKeepers software team.
-                    </Text>
-                    {/* <br/>
-                    <Center>
-                        <HStack>
-                            <a target='_blank' rel="noreferrer" href="https://github.com/Dooblr/ReactMinesweeper">
-                            <Button variant="outline" colorScheme="teal">
-                                <AiFillGithub/><div className="h-spacer"/>Github
-                            </Button></a>
-                        </HStack>
-                    </Center> */}
-                    <br/>
-                    <h2>Technologies used:</h2>
-                    <div className="sbr"/>
-                    <div className="flex-row space-evenly">
-                        <List spacing={3}>
-                            <ListItem>
-                                <ListIcon as={FaHtml5} color='teal.500' className="icon"/>HTML
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={FaCss3} color='teal.500' />CSS
-                            </ListItem>
-                            <ListItem>
-                                <ListIcon as={DiJavascript1} color='teal.500' />JavaScript
-                            </ListItem>
-                        </List>
-
-                    </div>
-                    </>
-                )
-            }
-    },
-    {
-        id:4,
+        id:2,
         title:"Reactsweeper",
         description:"A Minesweeper clone made using React",
         url:'https://Reactsweeper.web.app/',
@@ -254,7 +209,7 @@ const portfolioData = [
             }
     },
     {
-        id:4,
+        id:3,
         title:"Portfolio",
         description:"This website is running React!",
         avatar:<MdWeb className='portfolio-icon'/>,
